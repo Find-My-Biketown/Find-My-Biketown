@@ -1,0 +1,14 @@
+{
+  "name": "find-my-biketown",
+  "version": "1.0.0",
+  "description": "Getting Portlanders Riding",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "meghanroserebecca@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
