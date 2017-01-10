@@ -4,11 +4,12 @@
   "description": "Getting Portlanders Riding",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "meghanroserebecca@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "express-request-proxy": "^2.0.0"
   }
 }
