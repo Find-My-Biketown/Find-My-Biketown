@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>Find My BikeTown</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
   </head>
   <body>
     <header>
@@ -24,6 +25,10 @@
       </form>
       <section id="google-map">
         <h3>Google Maps</h3>
+        <div id="floating-panel">
+          <input id="address" type="textbox" value="">
+          <input id="submit" type="button" value="Geocode">
+        </div>
         <div id="map"></div>
       </section>
     </main>
@@ -35,13 +40,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
-    <!--API Token file(s) that needs to be GitIgnored-->
-    <script src="/googleMaps"></script>
 
     <!-- Model files: -->
-    <script src="/Find-My-Biketown/scripts/models/userObjectModel.js"></script>
+    <script src="/scripts/models/userObjectModel.js"></script>
     <script type="text/javascript" src="/scripts/models/outputModel.js"></script>
     <!-- View files: -->
+    <script src="/scripts/views/outputView.js"></script>
+    <!--API Token file(s) that needs to be GitIgnored-->
+    <script src="/googleMaps"></script>
 
     <!-- Controller files: -->
   </body>
