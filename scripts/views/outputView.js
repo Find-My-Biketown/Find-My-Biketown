@@ -1,4 +1,4 @@
-function initMap () {
+/*function initMap () {
   var centerPoint = {lat: , lng: };
   var map = new google.maps.Map(document.getElementById('map'), {
     center: centerPoint,//users address
@@ -9,4 +9,4 @@ function initMap () {
     position: centerPoint, //sets position of the marker
     map: map
   });
-};
+};*/
