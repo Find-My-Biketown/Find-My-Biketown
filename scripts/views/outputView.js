@@ -1,7 +1,7 @@
 function initMap () {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
-    center: {lat: 45.5231, lng: 122.6765},
+    center: {lat: 45.5231, lng: -122.6765},
     //the starting center point before the user inputs a specific address
     //minZoom: 10,//minimum zoom level that will be displayed. It will be a number without the quotes.
     //maxZoom: 20,//maximum zoom level that will be displayed. It will be a number without the quotes.
