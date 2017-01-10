@@ -3,6 +3,11 @@
 (function(module) {
   var output = {};
 
+
+  var PSEUDO_userObj = {address: '1st and Broadway',
+    lat: 45.523389,
+    lon: -122.680975};
+
   output.bikeStationsArr = []; // the array of bike station objects
   output.bikeStationsArrWithDistance = []; // copy of bikeStationsArr with added distance property
 
@@ -30,10 +35,35 @@
     })
     .done(callback);
   };
-// Create a function to calculate the distance between the user’s address and each Biketown station
-// The function takes user’s address as one argument and an array of objects with the bike station coordinates as the second argument
 
-  // Use the distance formula d=√​(x​2​​−x​1​​)​2​​+(y​2​​−y​1​​)​2​​​​​ to give each distance property a value
+// Create a function to calculate the distance between the user’s address and each Biketown station
+// The Haversine formula to calculate distance 'as the crow flies.'
+  function getDistanceFromLatLonInMiles(lat1,lon1,lat2,lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    var dLon = deg2rad(lon2-lon1);
+    var a =
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon/2) * Math.sin(dLon/2)
+      ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c; // Distance in km
+    var dMiles = d * 0.621371; // distance in miles
+    return dMiles;
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI/180);
+  }
+
+// Calculate the user's distance to each bike station
+  function calcDistanceFromUser(){
+    output.bikeStationsArrWithDistance.forEach(function(curStationObj){
+      curStationObj.distanceFromUser = getDistanceFromLatLonInMiles(PSEUDO_userObj.lat, PSEUDO_userObj.lon, curStationObj.lat, curStationObj.lon);
+      return curStationObj;
+    });
+  };
 
   // .sort(compare(a,b) the mapped? array by the distance property, ascending order
 
@@ -41,7 +71,7 @@
 
 // Append the returned array of objects from the distance function (up to a determined amount i.e. 5 indexes) as a list to the view/HTML
 
+  output.requestBikeStations(calcDistanceFromUser); // move this to controller?
 
-  output.requestBikeStations(); // move this to controller?
   module.output = output;
 })(window);
