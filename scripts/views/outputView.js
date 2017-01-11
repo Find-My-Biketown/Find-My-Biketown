@@ -37,7 +37,7 @@ function geocodeAddress(geocoder, resultsMap) {
   });
 }
 
-var script = document.createElement('script');
+/*var script = document.createElement('script');
 script.src = //whatever the path is to grab the bike stands json data
   document.getElementsByTagName('head')[0].appendChild(script); //requests JSONP directly from the biketown servers by appending a script tag to the head of the document
 window.markBikeStands = function(results) {
@@ -51,4 +51,4 @@ window.markBikeStands = function(results) {
       map: map //we are adding to the map that has already been made
     });
   };
-};
+};*/
