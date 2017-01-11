@@ -38,7 +38,7 @@
 
 // Create a function to calculate the distance between the user’s address and each Biketown station
 // The Haversine formula to calculate distance 'as the crow flies.'
-  function getDistanceFromLatLonInMiles(lat1,lon1,lat2,lon2) {
+  output.getDistanceFromLatLonInMiles = function(lat1,lon1,lat2,lon2) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
     var dLon = deg2rad(lon2-lon1);
@@ -51,14 +51,15 @@
     var d = R * c; // Distance in km
     var dMiles = d * 0.621371; // distance in miles
     return dMiles;
-  }
 
-  function deg2rad(deg) {
-    return deg * (Math.PI/180);
-  }
+    function deg2rad(deg) {
+      return deg * (Math.PI/180);
+    }
+  };
+
 
 // Calculate the user's distance to each bike station and sort the array of bike station objects by distance in ascending order
-  function calcDistanceFromUserAndSort(){
+  output.calcDistanceFromUserAndSort = function(){
     output.bikeStationsArrWithDistance.forEach(calcDistanceFromUser);
     output.bikeStationsArrWithDistance.sort(function(a,b){
       return a.distanceFromUser - b.distanceFromUser;
@@ -66,14 +67,12 @@
 
     function calcDistanceFromUser(curStationObj){
       //!!!!!!!!!!!!!!!!!!!!!!!! CHANGE PSEUDO_userObj with appropriate user obj
-      curStationObj.distanceFromUser = getDistanceFromLatLonInMiles(PSEUDO_userObj.lat, PSEUDO_userObj.lon, curStationObj.lat, curStationObj.lon);
+      curStationObj.distanceFromUser = output.getDistanceFromLatLonInMiles(user.userObject.lat, user.userObject.lon, curStationObj.lat, curStationObj.lon);
       return curStationObj;
     };
   };
 
 // Append the returned array of objects from the distance function (up to a determined amount i.e. 5 indexes) as a list to the view/HTML
-
-  output.requestBikeStations(calcDistanceFromUserAndSort); // move this to controller?
 
   module.output = output;
 })(window);

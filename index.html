@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
     <script id="bio-template" type="text/x-handlebars-template">
-
+      <article>
+        <header>
+          <img class="bio-pic" src="{{img}}" alt="spirit bike photo">
+          <h2>{{name}}</h2>
+          <div class="spiritBike">
+            <b>Spirit bike:</b> {{spiritBike}}
+          </div>
+        </header>
+        <section class="bio-body">{{{bio}}}</section>
+      </article>
     </script>
   </head>
+
   <body>
     <header>
       <h1>Find My BikeTown</h1>
@@ -30,15 +40,24 @@
         </form>
         <div id="map"></div>
       </section>
+      <section id="dev-bio-page">
+        <header>
+          Meet the developers
+        </header>
+        <article class="dev-bio-articles">
+          append handlebars here
+        </article>
+      </section>
     </main>
+
     <footer>
       &copy; Find-My-Biketown
     </footer>
+
     <!-- Vendor files: -->
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-
 
     <!-- Model files: -->
     <script src="/scripts/models/userObjectModel.js"></script>
