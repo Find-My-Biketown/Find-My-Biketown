@@ -17,7 +17,8 @@ function initMap () {
 };
 
 function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
+  var address = $('#street_address').val() + $('#zip').val();
+  console.log(address);
   //grabbing the specified address the user has given
   geocoder.geocode({'address': address},
   function(results, status) {
