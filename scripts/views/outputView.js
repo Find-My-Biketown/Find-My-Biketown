@@ -22,8 +22,14 @@ function geocodeAddress(geocoder, resultsMap) {
   //grabbing the specified address the user has given
   geocoder.geocode({'address': address},
   function(results, status) {
+    var loc = [];
   //turning the address into lat/long for google to render onto the map. Making sure the status is okay
     if (status === 'OK') {
+      loc[0]=results[0].geometry.location.lat();
+      loc[1]=results[0].geometry.location.lng();
+
+      alert( loc );
+
       resultsMap.setCenter(results[0].geometry.location);
       //set the center for the speicified address
       var marker = new google.maps.Marker({
@@ -35,7 +41,9 @@ function geocodeAddress(geocoder, resultsMap) {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-}
+  console.log(loc);
+  return loc;
+};
 
 var script = document.createElement('script');
 script.src = //whatever the path is to grab the bike stands json data
