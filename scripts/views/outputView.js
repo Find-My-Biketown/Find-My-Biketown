@@ -18,24 +18,30 @@ function initMap () {
 
 function geocodeAddress(geocoder, resultsMap) {
   var address = $('#street_address').val() + $('#zip').val();
+  var loc = [];
   console.log(address);
   //grabbing the specified address the user has given
   geocoder.geocode({'address': address},
   function(results, status) {
   //turning the address into lat/long for google to render onto the map. Making sure the status is okay
     if (status === 'OK') {
+      loc[0]=results[0].geometry.location.lat();
+      loc[1]=results[0].geometry.location.lng();
+
       resultsMap.setCenter(results[0].geometry.location);
       //set the center for the speicified address
       var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location
       });
-      //make a new marker for the speicified address
+      console.log(loc);
+      user.userObject.lat = loc[0];
+      user.userObject.long = loc[1];
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-}
+};
 
 var script = document.createElement('script');
 script.src = //whatever the path is to grab the bike stands json data
