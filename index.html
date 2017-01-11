@@ -29,19 +29,15 @@
       <section id="about_app">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </section>
-      <form> <!--TODO: Need to GIVE THIS an ACTION and a METHOD-->
-        Street Address: <input type="text" name="address" value="" size="25" maxlength="50" />
-        City: <select><option value="Portland">Portland</option></select>
-        State: <select><option value="OR">OR</option></select>
-        ZIP Code: <input type="number" name="zip" value="" size="6" maxlength="5" />
-        <input type="submit" name="Find Me!" value="Find Me!" />
-      </form>
       <section id="google-map">
         <h3>Google Maps</h3>
-        <div id="floating-panel">
-          <input id="address" type="textbox" value="">
-          <input id="submit" type="button" value="Geocode">
-        </div>
+        <form id="floating-panel">
+          Street Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
+          City: <select><option id="city" value="Portland">Portland</option></select>
+          State: <select><option id="state" value="OR">OR</option></select>
+          ZIP Code: <input id="zip" type="number" name="zip" value="" size="6" maxlength="5" />
+          <input type="submit" id="submit" name="findMe" value="Find Me!" />
+        </form>
         <div id="map"></div>
       </section>
       <section id="dev-bio-page">
