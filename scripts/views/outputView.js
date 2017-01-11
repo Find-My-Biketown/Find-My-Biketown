@@ -28,21 +28,19 @@ function geocodeAddress(geocoder, resultsMap) {
       loc[0]=results[0].geometry.location.lat();
       loc[1]=results[0].geometry.location.lng();
 
-      alert( loc );
-
       resultsMap.setCenter(results[0].geometry.location);
       //set the center for the speicified address
       var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location
       });
-      //make a new marker for the speicified address
+      console.log(loc);
+      user.userObject.lat = loc[0];
+      user.userObject.long = loc[1];
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-  console.log(loc);
-  return loc;
 };
 
 var script = document.createElement('script');
