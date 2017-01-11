@@ -7,6 +7,7 @@ $.fn.serializeJSON=function() {
 };
 
 $('form').on('submit', function(event) {
+  event.preventDefault();
   var userObject = $('form').serializeJSON();
   console.log(userObject);
   return(userObject);
