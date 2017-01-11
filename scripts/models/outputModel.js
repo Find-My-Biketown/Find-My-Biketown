@@ -3,11 +3,6 @@
 (function(module) {
   var output = {};
 
-// !!!!!!!!!!!!!!!!! CHANGE PSEUDO_userObj to appropriate obj
-  var PSEUDO_userObj = {address: '1st and Broadway',
-    lat: 45.523389,
-    lon: -122.680975};
-
   output.bikeStationsArr = []; // the array of bike station objects
   output.bikeStationsArrWithDistance = []; // copy of bikeStationsArr with added distance property
 

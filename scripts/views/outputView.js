@@ -36,7 +36,7 @@ function geocodeAddress(geocoder, resultsMap) {
       });
       console.log(loc);
       user.userObject.lat = loc[0];
-      user.userObject.long = loc[1];
+      user.userObject.lon = loc[1];
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
