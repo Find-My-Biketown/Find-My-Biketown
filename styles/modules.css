@@ -36,3 +36,55 @@
 input {
   margin-bottom: 10px;
 }
+
+.main-nav {
+  position: relative;
+  outline: 2px solid white;
+  overflow: auto;
+  width: 100%;
+  background-color: rgba(93, 0, 159, 0.8);
+}
+
+.icon-menu {
+  float: right;
+  display: block;
+  font-size: 3em;
+}
+
+.main-nav ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  clear: both;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav ul li {
+  /*display: inline;*/
+  display: block;
+  padding-right: 3em;
+}
+
+@media only screen and (min-width: 960px) {
+  nav {
+    color: #e5e5e5;
+    height: 4em;
+    width: 100%;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav ul li {
+    display: inline;
+  }
+}
