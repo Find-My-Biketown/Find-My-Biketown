@@ -4,11 +4,13 @@
   aboutView.toHtml = function (context){
     var source = $('#bio-template').html(); // grab the template
 
-    var template = Handlebars.compile(source); // compile the template
+    var template = Handlebars.compile($(context).html()); // compile the template
+
     var compile = template(context); // pass data to the template
 
-    // move this to view/controller?
-    $('.dev-bio-articles').html(compile); // add the compiled html to the page
+    return compile;
+    // // move this to view/controller?
+    // $('.dev-bio-articles').html(compile); // add the compiled html to the page
   };
 
 // !!!!!!!!!!!!!this will probably be moved eventually
@@ -26,11 +28,13 @@
 
   aboutView.loadAboutPage = function (callback){
     var devBios = JSON.parse(localStorage.getItem('devBios'));
-    devBios.forEach(aboutView.toHtml);
+    devBios.forEach(function(a){
+      $('.dev-bio-articles').append(aboutView.toHtml(a));
+    });
+
   };//end aboutView.loadAboutPage
 
 // So the ajax call gets the data locally, or from the app source, then sets it to localStorage, then will be able to be pulled down to render the about bios
-
   aboutView.loadAboutPage();
   module.aboutView = aboutView;
 })(window);
