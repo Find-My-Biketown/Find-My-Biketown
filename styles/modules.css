@@ -39,10 +39,8 @@ input {
 
 .main-nav {
   position: relative;
-  outline: 2px solid white;
   overflow: auto;
   width: 100%;
-  background-color: rgba(93, 0, 159, 0.8);
 }
 
 .icon-menu {
@@ -69,14 +67,8 @@ input {
   padding-right: 3em;
 }
 
-/*@media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3) { */
-
 @media only screen and (min-width: 960px) {
   nav {
-    color: #e5e5e5;
     height: 4em;
     width: 100%;
   }
@@ -92,4 +84,18 @@ input {
   .main-nav ul li {
     display: inline;
   }
+}
+
+li.tab-home {
+ background: rgba(255,175,75,1);
+ border-radius: 50%;
+ max-width: 20%;
+ max-height: 15%;
+}
+
+li.tab-resume {
+  background: rgba(255,175,75,1);
+  border-radius: 50%;
+  max-width: 20%;
+  max-height: 15%;
 }
