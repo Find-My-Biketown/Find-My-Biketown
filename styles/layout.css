@@ -1,3 +1,12 @@
 h1 {
+  color: #E56A00;
   text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 3em;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 2em;
 }

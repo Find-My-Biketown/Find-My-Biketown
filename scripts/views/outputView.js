@@ -31,8 +31,9 @@ function geocodeAddress(geocoder, resultsMap) {
       resultsMap.setCenter(results[0].geometry.location);
       //set the center for the speicified address
       var marker = new google.maps.Marker({
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         map: resultsMap,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
       });
       console.log(loc);
       user.userObject.lat = loc[0];
@@ -58,3 +59,5 @@ window.markBikeStands = function(results) {
     });
   };
 };
+
+//Auto-Complete coordinates

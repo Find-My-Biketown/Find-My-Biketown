@@ -14,7 +14,6 @@
   $('form').on('submit', function(event) {
     event.preventDefault();
     user.userObject = $('form').serializeJSON(); // create a user object from the form submission
-    // !!!!!!!!! these lat/lon are TEST numbers (Pioneer Sq)
     user.userObject.lat = '';
     user.userObject.lon = '';
     // ^^^^^^^^^^^ CALCULATE actual lat/lon above
