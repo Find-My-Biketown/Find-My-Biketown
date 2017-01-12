@@ -10,3 +10,13 @@ h3 {
   font-family: 'Paytone One', sans-serif;
   font-size: 2em;
 }
+
+.about_app {
+  width: 95%;
+  height: 10%;
+  border-radius: 50%;
+  background-color: rgba(14, 118, 180, .5);
+  padding: 5%;
+  color: #EF3900;
+  text-align: center;
+}
