@@ -67,21 +67,6 @@ input {
   padding-right: 3em;
 }
 
-li.tab-home {
- background: rgba(255,175,75,1);
- border-radius: 50%;
- max-width: 20%;
- max-height: 15%;
-}
-
-li.tab-resume {
-  background: rgba(255,175,75,1);
-  border-radius: 50%;
-  max-width: 20%;
-  max-height: 15%;
-}
-
-
 @media only screen and (min-width: 960px) {
   nav {
     height: 4em;
@@ -104,9 +89,13 @@ li.tab-resume {
 li.tab-home {
  background: rgba(255,175,75,1);
  border-radius: 50%;
+ max-width: 20%;
+ max-height: 15%;
 }
 
-li.tab-resume {
+li.tab-dev-team {
   background: rgba(255,175,75,1);
   border-radius: 50%;
+  max-width: 20%;
+  max-height: 15%;
 }

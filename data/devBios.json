@@ -3,18 +3,18 @@
       "name": "Claire Follet",
       "spiritBike": "Air Trainer 1",
       "img": "assets/at1Bike.jpg",
-      "bio": "<h4>Released in 1996, Claire was unlike anything seen in the coding industry.</h4><p>Claire has designed applications to perform multiple activities, both on court and in the gym, and helped establish the computer programming movement of the 2010’s.</p><p>Once Claire's code officially became available to consumers, people could now view, submit and respond in one program.</p>"
+      "bio": "<h3>Released in 1996, Claire was unlike anything seen in the coding industry.</h3><p>Claire has designed applications to perform multiple activities, both on court and in the gym, and helped establish the computer programming movement of the 2010’s.</p><p>Once Claire's code officially became available to consumers, people could now view, submit and respond in one program.</p>"
     },
     {
       "name": "Meghan Rebecca",
       "spiritBike": "Air Max 95",
       "img": "assets/airMaxBike.jpg",
-      "bio": "<h4>Meghan has been active to help reenergize Javascript performance coding category.</h4><p>Her original coding style was a bold, provocative silhouette that had not been preceded by any Javascript before it.</p><p>Inspiration for her code came to her as she looked out on Portland's skyline one gloomy day. She began picturing the process of rain eroding the earth and thought it would be interesting if the perfect product was unearthed by erosion.</p><p>With her unique design and architecture, Meghan has become and remains an icon of computer programming.</p>"
+      "bio": "<h3>Meghan has been active to help reenergize Javascript performance coding category.</h3><p>Her original coding style was a bold, provocative silhouette that had not been preceded by any Javascript before it.</p><p>Inspiration for her code came to her as she looked out on Portland's skyline one gloomy day. She began picturing the process of rain eroding the earth and thought it would be interesting if the perfect product was unearthed by erosion.</p><p>With her unique design and architecture, Meghan has become and remains an icon of computer programming.</p>"
     },
     {
       "name": "Kevin Wong",
       "spiritBike": "Air Safari",
       "img": "assets/safariBike.jpg",
-      "bio": "<h4>Originally released in 1987 just like the Nike Air Safari, Kevin has been changing the game in terms of what a junior developer could look like.</h4><p>Inspiration for his famous coding style came when he visited a coding schol in Portland and stumbled upon an exotic polar bear wall print.</p><p>He left wanting to experiment with unique single-page applications and RESTful API - one of which was Find My Biketown, now one of Portland's most recognizable Biketown apps.<p>"
+      "bio": "<h3>Originally released in 1987 just like the Nike Air Safari, Kevin has been changing the game in terms of what a junior developer could look like.</h3><p>Inspiration for his famous coding style came when he visited a coding schol in Portland and stumbled upon an exotic polar bear wall print.</p><p>He left wanting to experiment with unique single-page applications and RESTful API - one of which was Find My Biketown, now one of Portland's most recognizable Biketown apps.<p>"
     }
   ]
