@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="/styles/modules.css">
     <script id="bio-template" type="text/x-handlebars-template">
       <article>
-        <header>
-          <img class="bio-pic" src="{{img}}" alt="spirit bike photo">
-          <h2>{{name}}</h2>
-          <div class="spiritBike">
-            <b>Spirit bike:</b> {{spiritBike}}
-          </div>
-        </header>
+        <div class="dev-pic-container">
+          <img class="dev-pic" src="{{img}}" alt="spirit bike photo">
+        </div>
+        <h2>{{name}}</h2>
+        <div class="spiritBike">
+          <b>Spirit bike:</b> {{spiritBike}}
+        </div>
         <section class="bio-body">{{{bio}}}</section>
       </article>
     </script>
@@ -56,11 +56,8 @@
         <header>
           Meet the developers
         </header>
-        <article>
-          <ul>
-            <li class="dev-bio-articles">append handlebars here</li>
-          </ul>
-        </article>
+        <div class="dev-bio-articles">
+        </div>
       </section>
     </main>
 
@@ -84,5 +81,7 @@
     <script src="/googleMaps"></script>
 
     <!-- Controller files: -->
+    <script type="text/javascript" src="/scripts/controller/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/routes.js"></script>
   </body>
 </html>
