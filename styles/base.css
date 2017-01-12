@@ -7,7 +7,8 @@
 
 body {
   color: #E56A00;
-  background-image: url("../assets/old-bicycle-on-a-wooden-floor-1393857560kuu.jpg");
+  background-image: url("../assets/bicycle-1390216762h5N.jpg");
+  background-size: cover;
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5em;
 }
