@@ -11,6 +11,7 @@ function proxyGoogle(request, response) {
     url: 'https://maps.googleapis.com/maps/api/js',
     query: {
       key: process.env.API_KEY,
+      libraries: 'places',
       callback: 'initMap'
     }
   }

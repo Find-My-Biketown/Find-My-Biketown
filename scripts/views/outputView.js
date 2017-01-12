@@ -1,3 +1,4 @@
+var markers = [];
 function initMap () {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
@@ -8,7 +9,12 @@ function initMap () {
     mapTypeId: 'roadmap',
     fullscreenControl: true
   });
+  var input = document.getElementById('street_address');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  autocomplete.bindTo('bounds', map);
   //pulls the geocoder and declares a new goecoding instance
+  console.log(map);
   var geocoder = new google.maps.Geocoder();
 
   document.getElementById('submit').addEventListener('click', function() {
@@ -24,17 +30,22 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({'address': address},
   function(results, status) {
   //turning the address into lat/long for google to render onto the map. Making sure the status is okay
+    //deleteMarkers();
     if (status === 'OK') {
       loc[0]=results[0].geometry.location.lat();
       loc[1]=results[0].geometry.location.lng();
 
       resultsMap.setCenter(results[0].geometry.location);
       //set the center for the speicified address
+      if (markers.length) {
+        markers.forEach(function(marker) {marker.setMap(null);});
+      }
       var marker = new google.maps.Marker({
         icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         map: resultsMap,
         position: results[0].geometry.location,
       });
+      markers.push(marker);
       console.log(loc);
       user.userObject.lat = loc[0];
       user.userObject.lon = loc[1];
