@@ -13,9 +13,11 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff4100', GradientType=1 );
   margin: auto;
   position: relative;
-  width: 90%;
+  width: 85%;
   height: 10%;
   font-family: Tahoma, Geneva, sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
   font-size: 14px;
   font-style: italic;
   line-height: 24px;
@@ -29,4 +31,60 @@
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.main-nav {
+  position: relative;
+  outline: 2px solid white;
+  overflow: auto;
+  width: 100%;
+  background-color: rgba(93, 0, 159, 0.8);
+}
+
+.icon-menu {
+  float: right;
+  display: block;
+  font-size: 3em;
+}
+
+.main-nav ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  clear: both;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav ul li {
+  /*display: inline;*/
+  display: block;
+  padding-right: 3em;
+}
+
+@media only screen and (min-width: 960px) {
+  nav {
+    color: #e5e5e5;
+    height: 4em;
+    width: 100%;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav ul li {
+    display: inline;
+  }
 }

@@ -14,9 +14,8 @@
   $('form').on('submit', function(event) {
     event.preventDefault();
     user.userObject = $('form').serializeJSON(); // create a user object from the form submission
-    // !!!!!!!!! these lat/lon are TEST numbers (Pioneer Sq)
-    user.userObject.lat = 45.519164;
-    user.userObject.lon = -122.679375;
+    user.userObject.lat = '';
+    user.userObject.lon = '';
     // ^^^^^^^^^^^ CALCULATE actual lat/lon above
 
     // make API call to Biketown stations and calculate closest bike stations to user

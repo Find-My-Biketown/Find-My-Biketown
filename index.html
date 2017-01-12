@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>Find My BikeTown</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme|Anton|Libre+Franklin|Montserrat|Neuton|Paytone+One|Permanent+Marker|Russo+One" rel="stylesheet">
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
@@ -25,27 +26,40 @@
     <header>
       <h1>Find My BikeTown</h1>
     </header>
+
+    <nav class="main-nav">
+      <div class="icon-menu">
+        <img src="assets/bike-with-front-basket-icon-128.png" alt="bike icon">
+      </div>
+      <ul>
+        <li class="tab home" data-content="home"><a href="/">Home</a></li>
+        <li class="tab resume" data-content="dev-team"><a href="/dev-team">Dev team</a></li>
+      </ul>
+    </nav>
+
     <main>
-      <section id="about_app">
+      <section class="about_app">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </section>
       <section id="google-map">
-        <h3>Google Maps</h3>
+        <h3>Bike Me!</h3>
         <form id="floating-panel">
           Street Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
           City: <select><option id="city" value="Portland">Portland</option></select>
           State: <select><option id="state" value="OR">OR</option></select>
           ZIP Code: <input id="zip" type="number" name="zip" value="" size="6" maxlength="5" />
           <input type="submit" id="submit" name="findMe" value="Find Me!" />
+          <div id="map"></div>
         </form>
-        <div id="map"></div>
       </section>
       <section id="dev-bio-page">
         <header>
           Meet the developers
         </header>
-        <article class="dev-bio-articles">
-          append handlebars here
+        <article>
+          <ul>
+            <li class="dev-bio-articles">append handlebars here</li>
+          </ul>
         </article>
       </section>
     </main>
@@ -62,8 +76,10 @@
     <!-- Model files: -->
     <script src="/scripts/models/userObjectModel.js"></script>
     <script type="text/javascript" src="/scripts/models/outputModel.js"></script>
+    <script type="text/javascript" src="/scripts/models/aboutModel.js"></script>
     <!-- View files: -->
     <script src="/scripts/views/outputView.js"></script>
+    <script type="text/javascript" src="/scripts/views/aboutView.js"></script>
     <!--API Token file(s) that needs to be GitIgnored-->
     <script src="/googleMaps"></script>
 
