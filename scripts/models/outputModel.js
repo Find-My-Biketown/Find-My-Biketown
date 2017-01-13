@@ -8,7 +8,7 @@
 
 // Call the Biketown API to grab station info, specifically lat/long coordinates. Other possibilities: name, number of bikes available.
 // And possibly store it, an array of objects, in local storage?
-  output.requestBikeStations = function(callback) {
+  output.requestBikeStations = function() {
     $.getJSON('http://biketownpdx.socialbicycles.com/opendata/station_information.json')
     .done(function(responseData, message, xhr) {
       output.bikeStationsArr = responseData.data.stations; // the array of bike station objects
@@ -23,10 +23,12 @@
 
         return rtnObj;
       });
-      output.calcDistanceFromUserAndSort(); //output.bikeStationsArrWithDistance is calculated
+      output.calcDistanceFromUserAndSort();
+      callBikeMarkers(output.bikeStationsArrWithDistance);
+//output.bikeStationsArrWithDistance is calculated
       output.renderBikeStationsList(output.bikeStationsArrWithDistance);
     })
-    .done(callback)
+    //.done(callback)
     .fail(function(){
       alert('Biketown API request failed!');
     });
