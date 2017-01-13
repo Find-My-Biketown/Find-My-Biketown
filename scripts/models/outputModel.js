@@ -75,6 +75,7 @@
   output.renderBikeStationsList = function(arr){
     $('.closest-bike-stations').empty(); // empty any previous contents
     $('.about_app').hide(); // hide the about description
+    $('.bike-station-list').show();
 
     // append the 5 closest bike stations to the page
     for (var i = 0; i < 5; i++) {
