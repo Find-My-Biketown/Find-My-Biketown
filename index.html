@@ -10,14 +10,12 @@
     <link rel="stylesheet" href="/styles/modules.css">
     <script id="bio-template" type="text/x-handlebars-template">
       <article>
-        <div class="dev-pic-container">
-          <img class="dev-pic" src="{{img}}" alt="spirit bike photo">
-        </div>
         <h1>{{name}}</h1>
+        <h2>Spirit bike: {{spiritBike}}</h2>
+        <img class="dev-pic" src="{{img}}" alt="spirit bike photo">
         <div class="spiritBike">
-          <h2>Spirit bike: {{spiritBike}}</h2>
-        </div>
         <section class="bio-body">{{{bio}}}</section>
+        </div>
       </article>
     </script>
   </head>
@@ -52,8 +50,8 @@
         <ul class="closest-bike-stations">
         </ul>
       </section>
+      <h3 id="bikeMe">Bike Me!</h3>
       <section id="google-map">
-        <h3>Bike Me!</h3>
         <form id="floating-panel">
           Street Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
           City: <select><option id="city" value="Portland">Portland</option></select>
@@ -64,7 +62,7 @@
         </form>
       </section>
       <section id="dev-bio-page">
-        <header>
+        <header id="meet-dev">
           Meet the developers
         </header>
         <div class="dev-bio-articles">
