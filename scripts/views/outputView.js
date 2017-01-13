@@ -66,7 +66,7 @@ function callBikeMarkers (arr) {
     markers[i] = new google.maps.Marker({
       position: pos,
       map: bikeMap,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
       //description: output.bikeStationsArrWithDistance[i].desc,
       id: i
     });
