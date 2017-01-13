@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="/styles/modules.css">
     <script id="bio-template" type="text/x-handlebars-template">
       <article>
-        <header>
-          <img class="bio-pic" src="{{img}}" alt="spirit bike photo">
-          <h2>{{name}}</h2>
-          <div class="spiritBike">
-            <b>Spirit bike:</b> {{spiritBike}}
-          </div>
-        </header>
+        <div class="dev-pic-container">
+          <img class="dev-pic" src="{{img}}" alt="spirit bike photo">
+        </div>
+        <h1>{{name}}</h1>
+        <div class="spiritBike">
+          <h2>Spirit bike: {{spiritBike}}</h2>
+        </div>
         <section class="bio-body">{{{bio}}}</section>
       </article>
     </script>
@@ -32,14 +32,20 @@
         <img src="assets/bike-with-front-basket-icon-128.png" alt="bike icon">
       </div>
       <ul>
-        <li class="tab home" data-content="home"><a href="/">Home</a></li>
-        <li class="tab resume" data-content="dev-team"><a href="/dev-team">Dev team</a></li>
+        <li class="tab-home" data-content="home"><a href="/">Home</a></li>
+        <li class="tab-dev-team" data-content="dev-team"><a href="/dev-team">Dev team</a></li>
       </ul>
     </nav>
 
     <main>
       <section class="about_app">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </section>
+      <section class="bike-station-list">
+        <ul class="closest-bike-stations">
+          Closest Biketown stations are:
+          <li>test</li>
+        </ul>
       </section>
       <section id="google-map">
         <h3>Bike Me!</h3>
@@ -56,11 +62,8 @@
         <header>
           Meet the developers
         </header>
-        <article>
-          <ul>
-            <li class="dev-bio-articles">append handlebars here</li>
-          </ul>
-        </article>
+        <div class="dev-bio-articles">
+        </div>
       </section>
     </main>
 
@@ -84,5 +87,8 @@
     <script src="/googleMaps"></script>
 
     <!-- Controller files: -->
+    <script type="text/javascript" src="/scripts/controller/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/inputController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/routes.js"></script>
   </body>
 </html>

@@ -54,29 +54,6 @@ function geocodeAddress(geocoder, resultsMap) {
     }
   });
 };
-/*function getCoords(arrayOfStands) {
-  var coordinatePair = [output.bikeStationsArrWithDistance.lat, output.bikeStationsArrWithDistance.lon];
-  return coordinatePair;
-}
-function getPins (filteredArray) {
-  var pinCoords = output.bikeStationsArrWithDistance.map(getLatLng);
-  return pinCoords;
-}
-function placeAllPins (locationData, map){ //takes a 2d array of coords
-  var opts = {};
-  var allPins = [];
-  console.log('in place all pins ' , locationData);
-  locationData.forEach(function(coordinatePair){
-    opts = {}; //clear out opts obj
-    opts.position = new google.maps.LatLng(coordinatePair[0], coordinatePair[1]); //grabs coordinants from each object and sets the config for each pin
-    var marker = new google.maps.Marker(opts); // creats a new pin at coord currently in opt.position
-      // adds each marker obj to an array for access
-    marker.setMap(map); // places new pin on map
-    allPins.push(marker); // add to array for possible later use
-  });
-  return allPins; // returns array of objs, each obj is a representation of a pin now on the map
-}*/
-
 
 function callBikeMarkers (arr) {
   console.log('bike markers');
@@ -92,21 +69,4 @@ function callBikeMarkers (arr) {
       id: i
     });
   };
-  console.log('is this working?');
 };
-/*var script = document.createElement('script');
-script.src = //whatever the path is to grab the bike stands json data
-  document.getElementsByTagName('head')[0].appendChild(script); //requests JSONP directly from the biketown servers by appending a script tag to the head of the document
-window.markBikeStands = function(results) {
-    //results are the bike stands
-    //looping through the results array (bikestand objects) and placing a marker for each one
-  for (var i = 0; i < results.features.length; i++) {
-    var coords = results.features[i].geometry.coordinates;
-    var latLng = new google.maps.LatLng(coords[1], coords[0]);
-    var marker = new google.maps.Marker({
-      position: latLng, //sets position of the marker
-      map: map //we are adding to the map that has already been made
-    });
-  };
-};*/
-//Auto-Complete coordinates

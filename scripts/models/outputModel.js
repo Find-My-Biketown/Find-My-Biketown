@@ -25,6 +25,8 @@
       });
       output.calcDistanceFromUserAndSort();
       callBikeMarkers(output.bikeStationsArrWithDistance);
+//output.bikeStationsArrWithDistance is calculated
+      output.renderBikeStationsList(output.bikeStationsArrWithDistance);
     })
     //.done(callback)
     .fail(function(){
@@ -55,11 +57,12 @@
 
 
 // Calculate the user's distance to each bike station and sort the array of bike station objects by distance in ascending order
-  output.calcDistanceFromUserAndSort = function(){
+  output.calcDistanceFromUserAndSort = function() {
     output.bikeStationsArrWithDistance.forEach(calcDistanceFromUser);
     output.bikeStationsArrWithDistance.sort(function(a,b){
       return a.distanceFromUser - b.distanceFromUser;
     });
+    //the bikeStationsArrWithDistance is complete here
 
     function calcDistanceFromUser(curStationObj){
       //!!!!!!!!!!!!!!!!!!!!!!!! CHANGE PSEUDO_userObj with appropriate user obj
@@ -69,6 +72,14 @@
   };
 
 // Append the returned array of objects from the distance function (up to a determined amount i.e. 5 indexes) as a list to the view/HTML
+  output.renderBikeStationsList = function(arr){
+    $('.closest-bike-stations').empty(); // empty any previous contents
+
+    // append the 5 closest bike stations to the page
+    for (var i = 0; i < 5; i++) {
+      $('.closest-bike-stations').append($('<li>').text(arr[i].name + ' located at ' + arr[i].address));
+    }
+  };
 
   module.output = output;
 })(window);

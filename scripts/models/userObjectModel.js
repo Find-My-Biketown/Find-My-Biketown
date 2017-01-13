@@ -19,8 +19,8 @@
     // ^^^^^^^^^^^ CALCULATE actual lat/lon above
 
     // make API call to Biketown stations and calculate closest bike stations to user
-    //output.requestBikeStations(output.calcDistanceFromUserAndSort);
     output.requestBikeStations();
+    
     return(user.userObject);
   });
 
