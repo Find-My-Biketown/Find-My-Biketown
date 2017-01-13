@@ -26,7 +26,7 @@ function initMap () {
   });
 }
 function geocodeAddress(geocoder, resultsMap) {
-  var address = $('#street_address').val() + $('#zip').val();
+  var address = $('#street_address').val();
   var loc = [];
   console.log(address);
   //grabbing the specified address the user has given
@@ -71,4 +71,7 @@ function callBikeMarkers (arr) {
       id: i
     });
   };
+
+  var bikeLayer = new google.maps.BicyclingLayer();
+  bikeLayer.setMap(map);
 };

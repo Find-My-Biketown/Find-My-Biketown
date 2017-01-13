@@ -25,7 +25,34 @@
       <header>
         <h1>Find My BikeTown</h1>
       </header>
-
+    <main>
+      <section class="about_app">
+        <span class="bold">You want to ride. </span><br /><br />
+        You crave the freedom and power of a bicycle underneath you, and the exciting prospect of Portland's bike routes ahead.<br />
+        You need to harness the resources of BikeTown&trade;, stat!<br />
+        But where is the nearest BikeTown&trade; station to you?
+        The Find My BikeTown app is here to help.<br /><br />
+        <span class="bold">Enter your address and our app will list and show you the closest BikeTown&trade; station to your location.</span><br /><br />
+        Don't wait. Get riding.
+      </section>
+      <section class="bike-station-list">
+        The closest BikeTown&trade; stations to you are:
+        <ul class="closest-bike-stations">
+        </ul>
+      </section>
+      <section id="google-map">
+        <h3>Bike Me!</h3>
+        <form id="floating-panel">
+          Your Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
+          <input type="submit" id="submit" name="findMe" value="Find Me!" />
+          <div id="map"></div>
+        </form>
+      </section>
+      <section id="dev-bio-page">
+        <header>
+          Meet the developers
+        </header>
+        <div class="dev-bio-articles">
       <nav class="main-nav">
         <div class="icon-menu">
           <img src="assets/bike-with-front-basket-icon-128.png" alt="bike icon">

@@ -15,11 +15,10 @@
   position: relative;
   width: 85%;
   height: 10%;
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: 'Permanent Marker', Geneva, sans-serif;
   text-align: center;
   margin-bottom: 10px;
-  font-size: 14px;
-  font-style: italic;
+  font-size: 20px;
   line-height: 24px;
   font-weight: bold;
   color: #09C;
@@ -35,6 +34,20 @@
 
 input {
   margin-bottom: 10px;
+  margin-right: 2%;
+}
+
+input[type=submit] {
+    color: rgba(255,175,75,1);
+    font-family: 'Paytone One', sans-serif;
+    text-decoration: bold;
+    font-size: 1em;
+    background-color: #09C;
+    border: 0 none;
+    padding: 5px 15px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .main-nav {
