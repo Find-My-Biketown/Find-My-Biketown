@@ -80,6 +80,30 @@ input[type=submit] {
   padding-right: 3em;
 }
 
+img.dev-pic {
+  width: 40%;
+  margin-left: 6%;
+}
+
+.spiritBike {
+  width: 40%;
+  display: inline-block;
+  margin-left: 6%;
+}
+
+#meet-dev {
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+#bikeMe {
+  text-align: center;
+}
+
+#google-map {
+  text-shadow: none;
+}
+
 @media only screen and (min-width: 960px) {
   nav {
     height: 4em;
@@ -106,4 +130,9 @@ li.tab-dev-team {
   border-radius: 50%;
   max-width: 20%;
   max-height: 15%;
+}
+
+a {
+  text-align: none;
+  display: inline-block;
 }
