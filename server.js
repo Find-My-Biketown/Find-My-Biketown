@@ -1,6 +1,5 @@
 var express = require('express'),
   requestProxy = require('express-request-proxy'),
-  // httpRedirect = require('./redirect-http')(),
   port = process.env.PORT || 3000,
   app = express(),
   superagent = require('superagent');
@@ -20,25 +19,19 @@ function proxyGoogle(request, response) {
 ))(request, response);
 };
 
+// work around the issue: the request to http:// biketown api is insecure
 app.get('/bikedata', function(request, response){
+  // superagent is like $.ajax 
   superagent.get('http://biketownpdx.socialbicycles.com/opendata/station_information.json')
     .end(function(error, res){
       response.json(res.body);
     });
-  // (requestProxy({
-  //   url: 'https://biketownpdx.socialbicycles.com/opendata/station_information.json',
-  //   query: {}
-  // }))(request, response);
 });
 
 app.get('*', function(request, response) {
   console.log('New request:', request.url);
   response.sendFile('index.html', { root: '.' });
 });
-
-// if(process.env.NODE_ENV === 'production') {
-//   app.use(redirectHttp);
-// }
 
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');
