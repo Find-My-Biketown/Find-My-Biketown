@@ -56,8 +56,6 @@ function geocodeAddress(geocoder, resultsMap) {
 };
 
 function callBikeMarkers (arr) {
-  console.log('bike markers');
-  console.log(output.bikeStationsArrWithDistance);
   for (var i = 0; i < 5; i++) {
     var pos = {lat: arr[i].lat, lng: arr[i].lon};
 
