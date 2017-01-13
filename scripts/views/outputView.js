@@ -71,4 +71,7 @@ function callBikeMarkers (arr) {
       id: i
     });
   };
+
+  var bikeLayer = new google.maps.BicyclingLayer();
+  bikeLayer.setMap(map);
 };
