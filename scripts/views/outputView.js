@@ -1,6 +1,7 @@
 var markers = [];
+var map;
 function initMap () {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     center: {lat: 45.5231, lng: -122.6765},
     //the starting center point before the user inputs a specific address
@@ -9,6 +10,7 @@ function initMap () {
     mapTypeId: 'roadmap',
     fullscreenControl: true
   });
+  window.bikeMap = map;
   var input = document.getElementById('street_address');
   var autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -19,9 +21,9 @@ function initMap () {
 
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
+    output.requestBikeStations(callBikeMarkers, bikeMap);
   });
-};
-
+}
 function geocodeAddress(geocoder, resultsMap) {
   var address = $('#street_address').val() + $('#zip').val();
   var loc = [];
@@ -46,16 +48,52 @@ function geocodeAddress(geocoder, resultsMap) {
         position: results[0].geometry.location,
       });
       markers.push(marker);
-      console.log(loc);
+      //biketown stand markers
       user.userObject.lat = loc[0];
       user.userObject.lon = loc[1];
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 };
+/*function getCoords(arrayOfStands) {
+  var coordinatePair = [output.bikeStationsArrWithDistance.lat, output.bikeStationsArrWithDistance.lon];
+  return coordinatePair;
+}
+function getPins (filteredArray) {
+  var pinCoords = output.bikeStationsArrWithDistance.map(getLatLng);
+  return pinCoords;
+}
+function placeAllPins (locationData, map){ //takes a 2d array of coords
+  var opts = {};
+  var allPins = [];
+  console.log('in place all pins ' , locationData);
+  locationData.forEach(function(coordinatePair){
+    opts = {}; //clear out opts obj
+    opts.position = new google.maps.LatLng(coordinatePair[0], coordinatePair[1]); //grabs coordinants from each object and sets the config for each pin
+    var marker = new google.maps.Marker(opts); // creats a new pin at coord currently in opt.position
+      // adds each marker obj to an array for access
+    marker.setMap(map); // places new pin on map
+    allPins.push(marker); // add to array for possible later use
+  });
+  return allPins; // returns array of objs, each obj is a representation of a pin now on the map
+}*/
 
-var script = document.createElement('script');
+
+function callBikeMarkers () {
+  console.log('bike markers');
+  for (var i = 0; i < output.bikeStationsArrWithDistance.length; i++) {
+    var pos = {lat: output.bikeStationsArrWithDistance[i].lat, lng: output.bikeStationsArrWithDistance[i].lon};
+
+    markers[i] = new google.maps.Marker({
+      position: pos,
+      map: bikeMap,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      description: output.bikeStationsArrWithDistance[i].desc,
+      id: i
+    });
+  };
+  console.log('is this working?');
+};
+/*var script = document.createElement('script');
 script.src = //whatever the path is to grab the bike stands json data
   document.getElementsByTagName('head')[0].appendChild(script); //requests JSONP directly from the biketown servers by appending a script tag to the head of the document
 window.markBikeStands = function(results) {
@@ -69,6 +107,5 @@ window.markBikeStands = function(results) {
       map: map //we are adding to the map that has already been made
     });
   };
-};
-
+};*/
 //Auto-Complete coordinates
