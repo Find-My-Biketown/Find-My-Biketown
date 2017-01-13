@@ -11,6 +11,12 @@ h3 {
   font-size: 2em;
 }
 
+span.bold {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: rgba(255,175,75,1);
+}
+
 .about_app {
   width: 95%;
   height: 10%;

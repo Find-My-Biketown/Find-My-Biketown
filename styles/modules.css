@@ -81,11 +81,6 @@ input {
     display: block;
   }
 
-  .main-nav ul li {
-    display: inline;
-  }
-}
-
 li.tab-home {
  background: rgba(255,175,75,1);
  border-radius: 50%;
