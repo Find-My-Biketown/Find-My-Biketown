@@ -1,14 +1,25 @@
+html {
+  text-align: left;
+}
+
 h1 {
-  color: #E56A00;
   text-align: center;
+  color: #E56A00;
   font-family: 'Paytone One', sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
+}
+
+h2 {
+  text-align: center;
 }
 
 h3 {
-  text-align: center;
   font-family: 'Paytone One', sans-serif;
   font-size: 2em;
+}
+
+header {
+  text-align: center;
 }
 
 span.bold {
