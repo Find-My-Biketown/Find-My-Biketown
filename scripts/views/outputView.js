@@ -78,16 +78,17 @@ function placeAllPins (locationData, map){ //takes a 2d array of coords
 }*/
 
 
-function callBikeMarkers () {
+function callBikeMarkers (arr) {
   console.log('bike markers');
-  for (var i = 0; i < output.bikeStationsArrWithDistance.length; i++) {
-    var pos = {lat: output.bikeStationsArrWithDistance[i].lat, lng: output.bikeStationsArrWithDistance[i].lon};
+  console.log(output.bikeStationsArrWithDistance);
+  for (var i = 0; i < 5; i++) {
+    var pos = {lat: arr[i].lat, lng: arr[i].lon};
 
     markers[i] = new google.maps.Marker({
       position: pos,
       map: bikeMap,
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-      description: output.bikeStationsArrWithDistance[i].desc,
+      //description: output.bikeStationsArrWithDistance[i].desc,
       id: i
     });
   };
