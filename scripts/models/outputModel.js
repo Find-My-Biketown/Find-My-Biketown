@@ -73,6 +73,7 @@
 // Append the returned array of objects from the distance function (up to a determined amount i.e. 5 indexes) as a list to the view/HTML
   output.renderBikeStationsList = function(arr){
     $('.closest-bike-stations').empty(); // empty any previous contents
+    $('.about_app').hide(); // hide the about description
 
     // append the 5 closest bike stations to the page
     for (var i = 0; i < 5; i++) {
