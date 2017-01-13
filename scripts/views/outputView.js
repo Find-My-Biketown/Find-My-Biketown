@@ -43,7 +43,7 @@ function geocodeAddress(geocoder, resultsMap) {
         markers.forEach(function(marker) {marker.setMap(null);});
       }
       var marker = new google.maps.Marker({
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         map: resultsMap,
         position: results[0].geometry.location,
       });
