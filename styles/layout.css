@@ -28,7 +28,7 @@ span.bold {
   color: rgba(255,175,75,1);
 }
 
-.about_app {
+.about_app, .bike-station-list{
   width: 95%;
   height: 10%;
   border-radius: 50%;

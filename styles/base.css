@@ -7,6 +7,7 @@
 
 body {
   color: #E56A00;
+  margin: 0px;
   background-image: url("../assets/bicycle-1390216762h5N.jpg");
   background-size: cover;
   font-family: 'Permanent Marker', cursive;
@@ -16,4 +17,12 @@ body {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
+}
+
+.layer {
+  background-color: rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
