@@ -21,77 +21,79 @@
   </head>
 
   <body>
-    <header>
-      <h1>Find My BikeTown</h1>
-    </header>
+    <div class="layer">
+      <header>
+        <h1>Find My BikeTown</h1>
+      </header>
 
-    <nav class="main-nav">
-      <div class="icon-menu">
-        <img src="assets/bike-with-front-basket-icon-128.png" alt="bike icon">
-      </div>
-      <ul>
-        <li class="tab-home" data-content="home"><a href="/">Home</a></li>
-        <li class="tab-dev-team" data-content="dev-team"><a href="/dev-team">Dev team</a></li>
-      </ul>
-    </nav>
-
-    <main>
-      <section class="about_app">
-        <span class="bold">You want to ride. </span><br /><br />
-        You crave the freedom and power of a bicycle underneath you, and the exciting prospect of Portland's bike routes ahead.<br />
-        You need to harness the resources of BikeTown&trade;, stat!<br />
-        But where is the nearest BikeTown&trade; station to you?
-        The Find My BikeTown app is here to help.<br /><br />
-        <span class="bold">Enter your address and our app will list and show you the closest BikeTown&trade; station to your location.</span><br /><br />
-        Don't wait. Get riding.
-      </section>
-      <section class="bike-station-list">
-        The closest Biketown stations to you are:
-        <ul class="closest-bike-stations">
-        </ul>
-      </section>
-      <h3 id="bikeMe">Bike Me!</h3>
-      <section id="google-map">
-        <form id="floating-panel">
-          Street Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
-          City: <select><option id="city" value="Portland">Portland</option></select>
-          State: <select><option id="state" value="OR">OR</option></select>
-          ZIP Code: <input id="zip" type="number" name="zip" value="" size="6" maxlength="5" />
-          <input type="submit" id="submit" name="findMe" value="Find Me!" />
-          <div id="map"></div>
-        </form>
-      </section>
-      <section id="dev-bio-page">
-        <header id="meet-dev">
-          Meet the developers
-        </header>
-        <div class="dev-bio-articles">
+      <nav class="main-nav">
+        <div class="icon-menu">
+          <img src="assets/bike-with-front-basket-icon-128.png" alt="bike icon">
         </div>
-      </section>
-    </main>
+        <ul>
+          <li class="tab-home" data-content="home"><a href="/">Home</a></li>
+          <li class="tab-dev-team" data-content="dev-team"><a href="/dev-team">Dev team</a></li>
+        </ul>
+      </nav>
 
-    <footer>
-      &copy; Find-My-Biketown
-    </footer>
+      <main>
+        <section class="about_app">
+          <span class="bold">You want to ride. </span><br /><br />
+          You crave the freedom and power of a bicycle underneath you, and the exciting prospect of Portland's bike routes ahead.<br />
+          You need to harness the resources of BikeTown&trade;, stat!<br />
+          But where is the nearest BikeTown&trade; station to you?
+          The Find My BikeTown app is here to help.<br /><br />
+          <span class="bold">Enter your address and our app will list and show you the closest BikeTown&trade; station to your location.</span><br /><br />
+          Don't wait. Get riding.
+        </section>
+        <section class="bike-station-list">
+          The closest Biketown stations to you are:
+          <ul class="closest-bike-stations">
+          </ul>
+        </section>
+        <h3 id="bikeMe">Bike Me!</h3>
+        <section id="google-map">
+          <form id="floating-panel">
+            Street Address: <input type="text" id="street_address" name="streetAddress" value="" size="25" maxlength="50" />
+            City: <select><option id="city" value="Portland">Portland</option></select>
+            State: <select><option id="state" value="OR">OR</option></select>
+            ZIP Code: <input id="zip" type="number" name="zip" value="" size="6" maxlength="5" />
+            <input type="submit" id="submit" name="findMe" value="Find Me!" />
+            <div id="map"></div>
+          </form>
+        </section>
+        <section id="dev-bio-page">
+          <header id="meet-dev">
+            Meet the developers
+          </header>
+          <div class="dev-bio-articles">
+          </div>
+        </section>
+      </main>
 
-    <!-- Vendor files: -->
-    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+      <footer>
+        &copy; Find-My-Biketown
+      </footer>
 
-    <!-- Model files: -->
-    <script src="/scripts/models/userObjectModel.js"></script>
-    <script type="text/javascript" src="/scripts/models/outputModel.js"></script>
-    <script type="text/javascript" src="/scripts/models/aboutModel.js"></script>
-    <!-- View files: -->
-    <script src="/scripts/views/outputView.js"></script>
-    <script type="text/javascript" src="/scripts/views/aboutView.js"></script>
-    <!--API Token file(s) that needs to be GitIgnored-->
-    <script src="/googleMaps"></script>
+      <!-- Vendor files: -->
+      <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
-    <!-- Controller files: -->
-    <script type="text/javascript" src="/scripts/controller/aboutController.js"></script>
-    <script type="text/javascript" src="/scripts/controller/inputController.js"></script>
-    <script type="text/javascript" src="/scripts/controller/routes.js"></script>
+      <!-- Model files: -->
+      <script src="/scripts/models/userObjectModel.js"></script>
+      <script type="text/javascript" src="/scripts/models/outputModel.js"></script>
+      <script type="text/javascript" src="/scripts/models/aboutModel.js"></script>
+      <!-- View files: -->
+      <script src="/scripts/views/outputView.js"></script>
+      <script type="text/javascript" src="/scripts/views/aboutView.js"></script>
+      <!--API Token file(s) that needs to be GitIgnored-->
+      <script src="/googleMaps"></script>
+
+      <!-- Controller files: -->
+      <script type="text/javascript" src="/scripts/controller/aboutController.js"></script>
+      <script type="text/javascript" src="/scripts/controller/inputController.js"></script>
+      <script type="text/javascript" src="/scripts/controller/routes.js"></script>
+    </div>
   </body>
 </html>
