@@ -57,6 +57,9 @@ function geocodeAddress(geocoder, resultsMap) {
 };
 
 function callBikeMarkers (arr) {
+  if (markers.length) {
+    markers.forEach(function(marker) {marker.setMap(null);});
+  }
   for (var i = 0; i < 5; i++) {
     var pos = {lat: arr[i].lat, lng: arr[i].lon};
 
