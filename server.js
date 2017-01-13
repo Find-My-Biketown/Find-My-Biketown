@@ -2,7 +2,8 @@ var express = require('express'),
   requestProxy = require('express-request-proxy'),
   // httpRedirect = require('./redirect-http')(),
   port = process.env.PORT || 3000,
-  app = express();
+  app = express(),
+  superagent = require('superagent');
 
 app.use(express.static('./'));
 app.get('/googleMaps', proxyGoogle);
@@ -19,6 +20,16 @@ function proxyGoogle(request, response) {
 ))(request, response);
 };
 
+app.get('/bikedata', function(request, response){
+  superagent.get('http://biketownpdx.socialbicycles.com/opendata/station_information.json')
+    .end(function(error, res){
+      response.json(res.body);
+    });
+  // (requestProxy({
+  //   url: 'https://biketownpdx.socialbicycles.com/opendata/station_information.json',
+  //   query: {}
+  // }))(request, response);
+});
 
 app.get('*', function(request, response) {
   console.log('New request:', request.url);
