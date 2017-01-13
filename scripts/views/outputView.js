@@ -1,6 +1,7 @@
 var markers = [];
+var map;
 function initMap () {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     center: {lat: 45.5231, lng: -122.6765},
     //the starting center point before the user inputs a specific address
@@ -9,6 +10,7 @@ function initMap () {
     mapTypeId: 'roadmap',
     fullscreenControl: true
   });
+  window.bikeMap = map;
   var input = document.getElementById('street_address');
   var autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -18,10 +20,8 @@ function initMap () {
   var geocoder = new google.maps.Geocoder();
 
   document.getElementById('submit').addEventListener('click', function() {
-    console.log('geocode before');
     geocodeAddress(geocoder, map);
-    console.log('geocode after');
-    output.requestBikeStations(callBikeMarkers, map);
+    output.requestBikeStations(callBikeMarkers, bikeMap);
   });
 }
 function geocodeAddress(geocoder, resultsMap) {
@@ -49,7 +49,6 @@ function geocodeAddress(geocoder, resultsMap) {
       });
       markers.push(marker);
       //biketown stand markers
-      console.log('Im working');
       user.userObject.lat = loc[0];
       user.userObject.lon = loc[1];
     }
@@ -80,17 +79,19 @@ function placeAllPins (locationData, map){ //takes a 2d array of coords
 
 
 function callBikeMarkers () {
+  console.log('bike markers');
   for (var i = 0; i < output.bikeStationsArrWithDistance.length; i++) {
     var pos = {lat: output.bikeStationsArrWithDistance[i].lat, lng: output.bikeStationsArrWithDistance[i].lon};
 
     markers[i] = new google.maps.Marker({
       position: pos,
-      map: map,
+      map: bikeMap,
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
       description: output.bikeStationsArrWithDistance[i].desc,
       id: i
     });
   };
+  console.log('is this working?');
 };
 /*var script = document.createElement('script');
 script.src = //whatever the path is to grab the bike stands json data

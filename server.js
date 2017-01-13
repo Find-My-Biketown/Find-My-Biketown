@@ -12,7 +12,7 @@ function proxyGoogle(request, response) {
     query: {
       key: process.env.API_KEY,
       libraries: 'places',
-      callback: 'initMap()'
+      callback: 'initMap'
     }
   }
 ))(request, response);
