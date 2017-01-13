@@ -9,7 +9,7 @@
 // Call the Biketown API to grab station info, specifically lat/long coordinates. Other possibilities: name, number of bikes available.
 // And possibly store it, an array of objects, in local storage?
   output.requestBikeStations = function() {
-    $.getJSON('//biketownpdx.socialbicycles.com/opendata/station_information.json')
+    $.getJSON('http://biketownpdx.socialbicycles.com/opendata/station_information.json')
     .done(function(responseData, message, xhr) {
       output.bikeStationsArr = responseData.data.stations; // the array of bike station objects
       // Copy the bike station array of objects with .map() and add a distance property

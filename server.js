@@ -1,6 +1,6 @@
 var express = require('express'),
   requestProxy = require('express-request-proxy'),
-  httpRedirect = require('./redirect-http')(),
+  // httpRedirect = require('./redirect-http')(),
   port = process.env.PORT || 3000,
   app = express();
 
@@ -25,9 +25,9 @@ app.get('*', function(request, response) {
   response.sendFile('index.html', { root: '.' });
 });
 
-if(process.env.NODE_ENV === 'production') {
-  app.use(redirectHttp);
-}
+// if(process.env.NODE_ENV === 'production') {
+//   app.use(redirectHttp);
+// }
 
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');
