@@ -1,6 +1,7 @@
 var markers = [];
+var map;
 function initMap () {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     center: {lat: 45.5231, lng: -122.6765},
     //the starting center point before the user inputs a specific address
@@ -9,6 +10,7 @@ function initMap () {
     mapTypeId: 'roadmap',
     fullscreenControl: true
   });
+  window.bikeMap = map;
   var input = document.getElementById('street_address');
   var autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -19,9 +21,9 @@ function initMap () {
 
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
+    output.requestBikeStations(callBikeMarkers, bikeMap);
   });
-};
-
+}
 function geocodeAddress(geocoder, resultsMap) {
   var address = $('#street_address').val() + $('#zip').val();
   var loc = [];
@@ -46,29 +48,25 @@ function geocodeAddress(geocoder, resultsMap) {
         position: results[0].geometry.location,
       });
       markers.push(marker);
-      console.log(loc);
+      //biketown stand markers
       user.userObject.lat = loc[0];
       user.userObject.lon = loc[1];
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 };
 
-var script = document.createElement('script');
-script.src = //whatever the path is to grab the bike stands json data
-  document.getElementsByTagName('head')[0].appendChild(script); //requests JSONP directly from the biketown servers by appending a script tag to the head of the document
-window.markBikeStands = function(results) {
-    //results are the bike stands
-    //looping through the results array (bikestand objects) and placing a marker for each one
-  for (var i = 0; i < results.features.length; i++) {
-    var coords = results.features[i].geometry.coordinates;
-    var latLng = new google.maps.LatLng(coords[1], coords[0]);
-    var marker = new google.maps.Marker({
-      position: latLng, //sets position of the marker
-      map: map //we are adding to the map that has already been made
+function callBikeMarkers (arr) {
+  console.log('bike markers');
+  console.log(output.bikeStationsArrWithDistance);
+  for (var i = 0; i < 5; i++) {
+    var pos = {lat: arr[i].lat, lng: arr[i].lon};
+
+    markers[i] = new google.maps.Marker({
+      position: pos,
+      map: bikeMap,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      //description: output.bikeStationsArrWithDistance[i].desc,
+      id: i
     });
   };
 };
-
-//Auto-Complete coordinates

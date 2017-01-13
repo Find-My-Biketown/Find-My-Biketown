@@ -12,7 +12,6 @@
     $.getJSON('http://biketownpdx.socialbicycles.com/opendata/station_information.json')
     .done(function(responseData, message, xhr) {
       output.bikeStationsArr = responseData.data.stations; // the array of bike station objects
-
       // Copy the bike station array of objects with .map() and add a distance property
       output.bikeStationsArrWithDistance = output.bikeStationsArr.map(function(curObj){
         var rtnObj = {};
@@ -20,11 +19,13 @@
         rtnObj.address = curObj.address;
         rtnObj.lat = curObj.lat;
         rtnObj.lon = curObj.lon;
-        rtnObj.distanceFromUser = null;
+        rtnObj.distanceFromUser = '';
 
         return rtnObj;
       });
-      output.calcDistanceFromUserAndSort(); //output.bikeStationsArrWithDistance is calculated
+      output.calcDistanceFromUserAndSort();
+      callBikeMarkers(output.bikeStationsArrWithDistance);
+//output.bikeStationsArrWithDistance is calculated
       output.renderBikeStationsList(output.bikeStationsArrWithDistance);
     })
     //.done(callback)
