@@ -1,3 +1,6 @@
+  // I realize this is what had to be done to solve this issue in the short term. At some point, though
+  // you're going to want to have these available in some way that doesn't involve global variables.
+  // Another way to solve it might be to have it stored as a property of a map model object.
 var markers = [];
 var userMarkers = [];
 var map;

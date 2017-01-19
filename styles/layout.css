@@ -2,6 +2,14 @@ html {
   text-align: left;
 }
 
+/**
+* you have text-align: center on a number of elements. When you have
+* the same rule in a number of places like that you could list them all
+* at once. So something like:
+* h1, h2, header, .about_app, .bike-station-list {}
+* which would allow you to factor that out of the other rules
+*/
+
 h1 {
   text-align: center;
   color: #E56A00;

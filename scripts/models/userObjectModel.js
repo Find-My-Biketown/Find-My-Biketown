@@ -2,7 +2,8 @@
   var user = {};
 
   user.userObject = {};
-
+  //it's cool that you're adding a plugin here! For one small application, though
+  //this may haved been a little heavy handed
   $.fn.serializeJSON=function() {
     var json = {};
     jQuery.map($(this).serializeArray(), function(n, i){
@@ -20,7 +21,7 @@
 
     // make API call to Biketown stations and calculate closest bike stations to user
     output.requestBikeStations();
-    
+
     return(user.userObject);
   });
 

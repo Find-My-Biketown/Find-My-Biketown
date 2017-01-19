@@ -1,5 +1,4 @@
 'use strict';
-
 (function(module) {
   var output = {};
 
@@ -11,6 +10,7 @@
   output.requestBikeStations = function() {
     $.getJSON('/bikedata')
     .done(function(responseData, message, xhr) {
+      //try and keep console.logs like this in your development version and out of the final.
       console.log('responseData is: ', responseData);
       console.log('message is: ', message);
       console.log('xhr is: ', xhr);
@@ -39,6 +39,12 @@
 
 // Create a function to calculate the distance between the user’s address and each Biketown station
 // The Haversine formula to calculate distance 'as the crow flies.'
+
+// this is a bit of a personal decision but personally I'd tend to try for less arguments in a function
+// when I start to get up toward 3 or 4 arguments. So in this case I would opt to pass in the two objects
+// and get the properties off of them inside the function. Even better this is a great use case for ES6
+// destructuring. That would allow you to pass in two objects and have the necessary values available as
+// arguments.
   output.getDistanceFromLatLonInMiles = function(lat1,lon1,lat2,lon2) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
