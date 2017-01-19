@@ -15,6 +15,11 @@
 
 // !!!!!!!!!!!!!this will probably be moved eventually
 // this will happen when the page is loaded
+
+// I like that you applied some of what we had in class here, but this maybe isn't
+// the best use case for an ajax call. The data in your about is going to be the same
+// for the most part. So here I likely would have just had the objects in an array in
+// your code somewhere.
   aboutView.loadAboutPage = function (callback){
     if (localStorage.getItem('devBios')){
       var devBios = JSON.parse(localStorage.getItem('devBios'));
